@@ -1,5 +1,5 @@
 {
-  "name": "react-generate",
+  "name": "react-create",
   "version": "0.1.0",
   "description": "",
   "scripts": {
@@ -10,6 +10,6 @@
   "license": "ISC",
   "preferGlobal": true,
   "bin": {
-    "gen-comp": "index.js"
+    "react-create": "index.js"
   }
 }
