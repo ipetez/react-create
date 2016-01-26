@@ -1,4 +1,6 @@
 # react-create
+Simple React CLI for creating  React Components very easily by generating desired markup based on your preferences from the command line.
+
 ## Installation
 ### Via NPM
 Make sure to install this module globally so you can run the command from anywhere.
