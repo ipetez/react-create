@@ -1,7 +1,7 @@
 var args = process.argv.slice(2);
 var component = args[0];
 var es5 = args.indexOf('--es5') > -1;
-var withPkg = args.indexOf('--pkg') > -1;
+var withPkg = (args.indexOf('--pkg') > -1) || (args.indexOf('-p') > -1);
 var withJSX = args.indexOf('--jsx') > -1;
 var reactImport, compBegin, compEnd, compBody;
 

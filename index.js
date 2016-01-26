@@ -2,6 +2,7 @@
 
 var exec = require('child_process').exec;
 var fs = require('fs');
+var pjson = require('./package.json');
 
 var args = process.argv.slice(2);
 var component = args[0];
@@ -9,13 +10,20 @@ var dir = __dirname.split('/').pop();
 var createFile, subDir = '';
 
 // options passed in as arguments
-var withFolder = args.indexOf('--dir') > -1;
+var withFolder = (args.indexOf('--dir') > -1) || (args.indexOf('-d') > -1);
 var withJSX = args.indexOf('--jsx') > -1;
-var withPkg = args.indexOf('--pkg') > -1;
+var withPkg = (args.indexOf('--pkg') > -1) || (args.indexOf('-p') > -1);
 var es5 = args.indexOf('--es5') > -1;
+var version = (args.indexOf('-v') > -1) || (args.indexOf('--version') > -1);
+
 
 // Loading in appropriate templates
 var tmpl = require('./constants/templates');
+
+if (version) {
+  console.log(pjson.version);
+  return;
+}
 
 // Adding extensions for component
 var extensions = [];
