@@ -1,0 +1,15 @@
+{
+  "name": "react-generate",
+  "version": "0.1.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Ike Peters <ikedpeters21@gmail.com> (http://ikepeters.com)",
+  "license": "ISC",
+  "preferGlobal": true,
+  "bin": {
+    "gen-comp": "index.js"
+  }
+}
