@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "description": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ."
   },
   "keywords": [],
   "author": "Ike Peters <ikedpeters21@gmail.com> (http://ikepeters.com)",
@@ -11,5 +12,8 @@
   "preferGlobal": true,
   "bin": {
     "react-create": "index.js"
+  },
+  "devDependencies": {
+    "eslint": "^1.10.3"
   }
 }
