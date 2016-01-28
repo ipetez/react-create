@@ -1,5 +1,5 @@
 # react-create
-Simple React CLI for creating  React Components very easily by generating desired markup based on your preferences from the command line.
+Simple React CLI that aims to speed up development by generating desired React component markup based on your preferences via the command line.
 
 ## Installation
 ### Via NPM
@@ -26,12 +26,13 @@ $ npm link
     Usage: react-create [component name]
 
     Options:
-
-      -v, --version    Output's the version number (e.g react-create -v)
+      -v, --version    Outputs the version number (e.g react-create -v)
+      -h, --help       Prints out usage options
       -d, --dir        Creates a [componen name] directory with component file inside. (Default is just the component file)
       -p, --pkg        Includes a package.json file with component
       --es5            Generates the compoenent with React's ES5 syntax. (Default is ES6).
       --jsx            Creates the component with `.jsx` extenstion. (Default is `.js`)
+      --entry          Bootstraps the component with the 'ReactDOM.render' function.
       
 ## Examples
 #### Create `Header` Component folder with appropriate component files and a package.json 
