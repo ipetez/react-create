@@ -1,6 +1,7 @@
 # react-create
 Simple React CLI that aims to speed up development by generating desired React component markup based on your preferences via the command line.
 
+[![Build Status](https://travis-ci.org/ipeters90/react-create.svg?branch=master)](https://travis-ci.org/ipeters90/react-create)
 ## Installation
 ### Via NPM
 Make sure to install this module globally so you can run the command from anywhere.
