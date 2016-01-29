@@ -1,13 +1,21 @@
 {
   "name": "react-create",
   "version": "0.1.2",
-  "description": "",
+  "description": "Simple React CLI that aims to speed up development by generating desired React component boilerplate.",
   "scripts": {
     "test": "eslint ."
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ipeters90/react-create.git"
+  },
+  "keywords": [
+    "react",
+    "cli",
+    "component"
+  ],
   "author": "Ike Peters <ikedpeters21@gmail.com> (http://ikepeters.com)",
-  "license": "ISC",
+  "license": "MIT",
   "preferGlobal": true,
   "bin": {
     "react-create": "index.js"
