@@ -1,6 +1,6 @@
 {
   "name": "react-create",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Simple React CLI that aims to speed up development by generating desired React component markup based on your preferences via the command line.",
   "scripts": {
     "test": "eslint ."
