@@ -36,24 +36,54 @@ $ npm link
       --entry          Bootstraps the component with the 'ReactDOM.render' function.
       
 ## Examples
-#### Create `Header` Component folder with appropriate component files and a package.json 
+#### Create `Header` component file with no extra arguments
+```bash
+$ react-create Header
+```
+will generate this `Header.js` file
+```js
+import React, { Component } from 'react';
+
+export default class Header extends Component {
+ render() {
+    return (
+      <div className="header">
+        { this.props.children }
+      </div>
+    )
+  }
+}
+```
+
+#### Create `Header` component with ES5 syntax and the `.jsx` extension
+```bash
+$ react-create Header --jsx -es5
+```
+will generate this `Header.jsx` file
+```js
+var React = require('react');
+
+var Header = React.createClass({
+  render: function() {
+    return (
+      <div className="header">
+        { this.props.children }
+      </div>
+    )
+  }
+})
+```
+
+#### Create `Header` component folder with appropriate component files and a package.json 
 ```bash
 $ react-create Header -d -jsx -p
 ```
-will create
-```bash
-Header
-\
-  -- Header.jsx // With ES6 Markup of a React component
-  -- Header.css
-  -- package.json // With name, main and version number markup included
-```
+will generate 3 files
 
-#### Simply create a component file written in `ES5` (note the `.js` extension instead of `.jsx`)
-```bash
-$ react-create Header --es5
 ```
-will create
-```bash
-Header.js // With ES5 Markup of a React component
+.
+└─ Header/
+   ├─ Header.jsx         -> With ES6 Markup of a React component
+   ├─ Header.css
+   └─ package.json       -> With name, main and version number markup included
 ```
