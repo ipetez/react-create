@@ -29,9 +29,9 @@ $ npm link
     Options:
       -v, --version    Outputs the version number (e.g react-create -v)
       -h, --help       Prints out usage options
-      -d, --dir        Creates a [componen name] directory with component file inside. (Default is just the component file)
+      -d, --dir        Creates a [component name] directory with component file inside. (Default is just the component file)
       -p, --pkg        Includes a package.json file with component
-      --es5            Generates the compoenent with React's ES5 syntax. (Default is ES6).
+      --es5            Generates the component with React's ES5 syntax. (Default is ES6).
       --jsx            Creates the component with `.jsx` extenstion. (Default is `.js`)
       --entry          Bootstraps the component with the 'ReactDOM.render' function.
       
@@ -57,7 +57,7 @@ export default class Header extends Component {
 
 #### Create `Header` component with ES5 syntax and the `.jsx` extension
 ```bash
-$ react-create Header --jsx -es5
+$ react-create Header --jsx --es5
 ```
 will generate this `Header.jsx` file
 ```js
