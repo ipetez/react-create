@@ -11,7 +11,7 @@ if (es5) {
   reactImport = 'var React = require(\'react\');';
   compBegin = '\n\nvar ' + component + ' = React.createClass({\n';
   compBody = '\u0020\u0020render: function() {\n\u0020\u0020\u0020\u0020return (\n\u0020\u0020\u0020\u0020\u0020\u0020<div className="' + component.toLowerCase() + '">\n\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020{ this.props.children }\n\u0020\u0020\u0020\u0020\u0020\u0020</div>\n\u0020\u0020\u0020\u0020)\n\u0020\u0020}\n';
-  compEnd = '})';
+  compEnd = '});';
 }
 
 // Or ES6 Component
@@ -19,7 +19,7 @@ else {
   reactImport = 'import React, { Component } from \'react\';';
   compBegin = '\n\nexport default class ' + component + ' extends Component {\n';
   compBody = '\u0020\u0020render() {\n\u0020\u0020\u0020\u0020return (\n\u0020\u0020\u0020\u0020\u0020\u0020<div className="' + component.toLowerCase() + '">\n\u0020\u0020\u0020\u0020\u0020\u0020\u0020\u0020{ this.props.children }\n\u0020\u0020\u0020\u0020\u0020\u0020</div>\n\u0020\u0020\u0020\u0020)\n\u0020\u0020}\n';
-  compEnd = '}';
+  compEnd = '};';
 }
 
 // Mounts component to the DOM
@@ -30,7 +30,7 @@ if (isEntry) {
   else {
     reactImport += '\nimport ReactDOM from \'react-dom\';';
   }
-  compEnd += '\n\nReactDom.render(<' + component + '/>, document.getElementById(\'app\'));';
+  compEnd += '\n\nReactDOM.render(<' + component + '/>, document.getElementById(\'app\'));';
 }
 
 // Export component

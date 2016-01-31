@@ -36,7 +36,7 @@ $ npm link
       --entry          Bootstraps the component with the 'ReactDOM.render' function.
       
 ## Examples
-#### Create `Header` component file with no extra arguments
+#### Create `Header` component file that mounts to the DOM
 ```bash
 $ react-create Header
 ```
@@ -53,6 +53,8 @@ export default class Header extends Component {
     )
   }
 }
+
+ReactDom.render(<Header/>, document.getElementById('app'));
 ```
 
 #### Create `Header` component with ES5 syntax and the `.jsx` extension
@@ -81,7 +83,6 @@ $ react-create Header -d -jsx -p
 will generate 3 files
 
 ```
-.
 └─ Header/
    ├─ Header.jsx         -> With ES6 Markup of a React component
    ├─ Header.css
