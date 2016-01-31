@@ -55,7 +55,7 @@ export default class Header extends Component {
   }
 }
 
-ReactDom.render(<Header/>, document.getElementById('app'));
+ReactDOM.render(<Header/>, document.getElementById('app'));
 ```
 
 #### Create `Header` component with ES5 syntax and the `.jsx` extension
