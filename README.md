@@ -38,7 +38,7 @@ $ npm link
 ## Examples
 #### Create `Header` component file that mounts to the DOM
 ```bash
-$ react-create Header
+$ react-create Header --entry
 ```
 will generate this `Header.js` file
 ```js
