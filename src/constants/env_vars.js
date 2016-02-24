@@ -10,9 +10,9 @@ var isEntry = args.indexOf('--entry') > -1;
 
 // Make variables accessible globally
 module.exports = {
-	withFolder: withFolder,
-	withJSX: withJSX,
-	withPkg: withPkg,
-	es5: es5,
-	isEntry: isEntry
+  withFolder: withFolder,
+  withJSX: withJSX,
+  withPkg: withPkg,
+  es5: es5,
+  isEntry: isEntry
 }
