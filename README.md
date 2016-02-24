@@ -24,10 +24,10 @@ $ npm link
 
 ## Usage
 
-    Usage: react-create [component name]
+    Usage: react component [component name]
 
     Options:
-      -v, --version    Outputs the version number (e.g react-create -v)
+      -v, --version    Outputs the version number (e.g react -v)
       -h, --help       Prints out usage options
       -d, --dir        Creates a [component name] directory with component file inside. (Default is just the component file)
       -p, --pkg        Includes a package.json file with component
@@ -38,7 +38,7 @@ $ npm link
 ## Examples
 #### Create `Header` component file that mounts to the DOM
 ```bash
-$ react-create Header --entry
+$ react component Header --entry
 ```
 will generate this `Header.js` file
 ```js
@@ -60,7 +60,7 @@ ReactDOM.render(<Header/>, document.getElementById('app'));
 
 #### Create `Header` component with ES5 syntax and the `.jsx` extension
 ```bash
-$ react-create Header --jsx --es5
+$ react component Header --jsx --es5
 ```
 will generate this `Header.jsx` file
 ```js
@@ -79,7 +79,7 @@ var Header = React.createClass({
 
 #### Create `Header` component folder with appropriate component files and a package.json 
 ```bash
-$ react-create Header -d -jsx -p
+$ react component Header -d -jsx -p
 ```
 will generate 3 files
 
