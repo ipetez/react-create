@@ -3,7 +3,10 @@
   "version": "0.2.0",
   "description": "Simple React CLI that aims to speed up development by generating desired React component markup based on your preferences via the command line.",
   "scripts": {
-    "test": "eslint ."
+    "lint": "eslint src",
+    "clean": "rimraf lib",
+    "build": "npm run clean && babel src --out-dir lib",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -18,9 +21,17 @@
   "license": "MIT",
   "preferGlobal": true,
   "bin": {
-    "react": "src/index.js"
+    "rc": "lib/index.js",
+    "react-create": "lib/index.js"
   },
   "devDependencies": {
-    "eslint": "^1.10.3"
+    "babel-cli": "^6.6.5",
+    "babel-core": "^6.5.2",
+    "babel-eslint": "^5.0.0",
+    "babel-plugin-array-includes": "^2.0.3",
+    "babel-preset-es2015": "^6.5.0",
+    "eslint": "^1.10.3",
+    "express": "^4.13.4",
+    "rimraf": "^2.5.2"
   }
 }
