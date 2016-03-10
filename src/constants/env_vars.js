@@ -1,18 +1,19 @@
-var args = process.argv.slice(2);
+const
+  args = process.argv.slice(2),
 
-// Component creation
-var withFolder = (args.indexOf('--dir') > -1) || (args.indexOf('-d') > -1);
-var withJSX = args.indexOf('--jsx') > -1;
-var withPkg = (args.indexOf('--pkg') > -1) || (args.indexOf('-p') > -1);
-var es5 = args.indexOf('--es5') > -1;
-var isEntry = args.indexOf('--entry') > -1;
+  // Component arguments
+  withFolder = (args.includes('--dir')) || (args.includes('-d')),
+  withJSX = args.includes('--jsx'),
+  withPkg = (args.includes('--pkg')) || (args.includes('-p')),
+  es5 = args.includes('--es5'),
+  isEntry = args.includes('--entry');
 
 
 // Make variables accessible globally
-module.exports = {
-  withFolder: withFolder,
-  withJSX: withJSX,
-  withPkg: withPkg,
-  es5: es5,
-  isEntry: isEntry
+export {
+  withFolder,
+  withJSX,
+  withPkg,
+  es5,
+  isEntry
 }

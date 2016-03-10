@@ -39,5 +39,6 @@
     // Use if () { }
     //          ^ space
     "space-before-blocks": [2, "always"]
-  }
+  },
+  "parser": "babel-eslint",
 }
