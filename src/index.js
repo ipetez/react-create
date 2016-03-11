@@ -18,7 +18,6 @@ if (version) {
 if (help) {
   console.log([
     'usage: react-create <action> <filename> [options]',
-    'NOTE: \'rc\' is a shorthand alias for the \'react-create\' command',
     '',
     'actions:',
     '  comp, component          Passed in as first argument to signify component creation', 

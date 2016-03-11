@@ -4,3 +4,4 @@
 test/
 src
 *.log
+node_modules

@@ -29,7 +29,6 @@ $ npm link
 ## Usage
 
     Usage: react-create component <component name> [options]
-    NOTE: 'rc' is a shorthand alias for the 'react-create' command
 
     Actions:
       comp, component            Passed in as first argument to signify component creation

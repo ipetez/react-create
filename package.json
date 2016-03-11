@@ -21,7 +21,6 @@
   "license": "MIT",
   "preferGlobal": true,
   "bin": {
-    "rc": "lib/index.js",
     "react-create": "lib/index.js"
   },
   "devDependencies": {
