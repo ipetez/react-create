@@ -89,7 +89,7 @@ module.exports = Header;
 
 #### Create `Header` component folder with appropriate component files and a package.json 
 ```bash
-$ react-create component Header -d --jsx -pkg --styl
+$ react-create component Header -d --jsx --pkg --styl
 ```
 will generate 3 files
 
