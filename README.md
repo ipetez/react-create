@@ -6,9 +6,9 @@ Simple React CLI that aims to speed up development by allowing you to create rea
 ### Via NPM
 Make sure to install this module globally so you can run the command from anywhere.
 ```bash
-npm install -g react-create
+npm install https://github.com/saidmoya12/react-create -g 
 ```
-### Or via Github repo
+### Or build Github repo
 Clone Repository
 ```bash
 $ git clone https://github.com/ipeters90/react-create.git
@@ -38,12 +38,55 @@ $ npm link
       -h, --help                 Prints out usage options
       -d, --dir                  Creates a [component name] directory with component file inside. (Default is just the component file)
       -p, --pkg                  Includes a package.json file with component
-      --es5                      Generates the component with React's ES5 syntax. (Default is ES6).
+      --fs                      Generates the component with React's fragment syntax. (Default is class).
+      --redux                    Generates the component with Redux connect. 
       --jsx                      Creates the component with `.jsx` extenstion. (Default is `.js`)
       --entry                    Bootstraps the component with the 'ReactDOM.render' function.
-      --css,--styl,--less, -scss Create and choose your css preprocessor to generate
+      --css,--styl,--less,--styl,-scss Create and choose your css preprocessor to generate
       
 ## Examples
+
+#### Create `Header` component with ES6 syntax and redux
+```bash
+$ react-create component Header --redux
+```
+will generate this `Home.js` file
+```js
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+class Header extends Component {
+	render() {
+		return (
+			<div className="header">
+				{ this.props.children }
+			</div>
+		)
+	}
+}
+
+const mapStateToProps = state => {
+	//state.theReducer
+}
+
+export default connect(mapStateToProps)(Header);
+```
+
+#### Create `Header` component with fragment syntax and the `.jsx` extension
+```bash
+$ react-create component Header --jsx --fs
+```
+will generate this `Header.jsx` file
+```js
+import React from 'react';
+
+const Header = () => (
+	<div className="header"></div>
+)
+
+export default Header;
+```
+
 #### Create `Home` component file that mounts to the DOM
 ```bash
 $ react-create component Home --entry
@@ -64,27 +107,6 @@ export default class Home extends Component {
 }
 
 ReactDOM.render(<Home/>, document.getElementById('app'));
-```
-
-#### Create `Header` component with ES5 syntax and the `.jsx` extension
-```bash
-$ react-create component Header --jsx --es5
-```
-will generate this `Header.jsx` file
-```js
-var React = require('react');
-
-var Header = React.createClass({
-  render: function() {
-    return (
-      <div className="header">
-        { this.props.children }
-      </div>
-    )
-  }
-})
-
-module.exports = Header;
 ```
 
 #### Create `Header` component folder with appropriate component files and a package.json 
