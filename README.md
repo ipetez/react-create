@@ -38,7 +38,7 @@ $ npm link
       -h, --help                 Prints out usage options
       -d, --dir                  Creates a [component name] directory with component file inside. (Default is just the component file)
       -p, --pkg                  Includes a package.json file with component
-      --fs                      Generates the component with React's fragment syntax. (Default is class).
+      --fs                       Generates the component with React's fragment syntax. (Default is class).
       --redux                    Generates the component with Redux connect. 
       --jsx                      Creates the component with `.jsx` extenstion. (Default is `.js`)
       --entry                    Bootstraps the component with the 'ReactDOM.render' function.
