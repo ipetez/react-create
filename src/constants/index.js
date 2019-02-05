@@ -15,6 +15,6 @@ switch (process.platform) {
 }
 
 // stylesheet extensions
-const styleExts = ['--scss', '--css', '--styl', '--less'];
+const styleExts = ['--scss', '--styl', '--css', '--styl', '--less'];
 
 export { createFile, styleExts }

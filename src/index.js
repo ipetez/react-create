@@ -29,7 +29,7 @@ if (help) {
     '  --es5                    Generates the compoenent with React\'s ES5 syntax. (Default is ES6)',
     '  --jsx                    Creates the component with `.jsx` extenstion. (Default is `.js`)',
     '  --entry                  Bootstraps the component with the \'ReactDOM.render\' function.',
-    '--css,--styl,--less, -scss Create and choose your css preprocessor to generate'
+    '--css,--styl,--less,--scss Create and choose your css preprocessor to generate'
   ].join('\n'));
   process.exit();
 }
