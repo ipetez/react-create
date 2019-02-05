@@ -26,7 +26,7 @@ if (help) {
     '  -v, --version            Output\'s the version number (e.g react-create -v)',
     '  -d, --dir                Creates a [componen name] directory with component file inside',
     '  -p, --pkg                Includes a package.json file with component',
-    '  --es5                    Generates the compoenent with React\'s ES5 syntax. (Default is ES6)',
+    '  --fn                    Generates the compoenent with React\'s fn syntax. (Default is ES6)',
     '  --jsx                    Creates the component with `.jsx` extenstion. (Default is `.js`)',
     '  --entry                  Bootstraps the component with the \'ReactDOM.render\' function.',
     '--css,--styl,--less,--scss Create and choose your css preprocessor to generate'

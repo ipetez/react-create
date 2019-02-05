@@ -5,7 +5,8 @@ const
   withFolder = (args.includes('--dir')) || (args.includes('-d')),
   withJSX = args.includes('--jsx'),
   withPkg = (args.includes('--pkg')) || (args.includes('-p')),
-  es5 = args.includes('--es5'),
+  fn = args.includes('--fn'),
+  redux = args.includes('--redux'),
   isEntry = args.includes('--entry');
 
 
@@ -14,6 +15,7 @@ export {
   withFolder,
   withJSX,
   withPkg,
-  es5,
+  fn,
+  redux,
   isEntry
 }

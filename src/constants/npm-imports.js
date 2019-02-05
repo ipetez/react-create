@@ -1,9 +1,17 @@
-export const ReactDOM = [
-  `import ReactDOM from 'react-dom';`,
-  `var ReactDOM = require('react-dom');`
-]
+export const ReactDOM = `import ReactDOM from 'react-dom';`
+
 
 export const React = [
-  `import React, { Component } from 'react';`,
-  `var React = require('react');`
+  `import React from 'react';`,
+  `import React, { Component } from 'react';`
+];
+
+export const Redux = [
+`import React from 'react';
+import { connect } from 'react-redux';
+`,
+`import React, { Component } from 'react';
+import { connect } from 'react-redux';
+`
 ]
+
