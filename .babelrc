@@ -1,4 +1,8 @@
 {
-  "presets": ["es2015"],
-  "plugins": ["array-includes"]
+  "presets": [
+    "@babel/preset-env"
+  ],
+  "plugins": [
+    "array-includes"
+  ]
 }

@@ -1,112 +1,50 @@
-import { fn, redux, isEntry } from '../constants/env_vars';
+import fs from 'fs';
+import { fn, controlled, redux, isEntry } from '../constants/env_vars';
 import * as deps from '../constants/npm-imports';
 
 const
 args = process.argv.slice(2),
 component = args[1];
 
-let template,reactImports, compBody, compEnd = ``;
+let template,reactImports, compBody, compEnd = '';
 
 
 // Generate fn Component
 if (fn) {
+	if(controlled){
+		console.log('Controlled component not suppot with functional syntax')
+		process.exit();
+	}
+
+	if(redux) 
+		compBody = fs.readFileSync(__dirname+'../../../templates/js/redux.fn.js', "utf8");
+	else
+		compBody = fs.readFileSync(__dirname+'../../../templates/js/functional.js', "utf8");
+
+}else {
 	if(redux) {
-		reactImports = deps.Redux[0];
-		compBody =`
-const ${component} = () => (
-	<div className="${component.toLowerCase()}"></div>
-)
-
-const mapStateToProps = state => {
-	//state.theReducer
-}
-
-export default connect(mapStateToProps)(${component});`;
+		if(controlled)
+			compBody = fs.readFileSync(__dirname+'../../../templates/js/redux-controlled.js', "utf8");
+		else
+			compBody = fs.readFileSync(__dirname+'../../../templates/js/redux.js', "utf8");		
 
 	}else{
-		reactImports = deps.React[0]
-		compBody =`
-
-const ${component} = () => (
-	<div className="${component.toLowerCase()}"></div>
-)
-
-export default  ${component};`;
-	}	
-}
-	
-
-
-// Or ES6 Component
-else {
-	if(redux) {
-		reactImports = deps.Redux[1];
-		
-		compBody = `
-class ${component} extends Component {
-	render() {
-		return (
-			<div className="${component.toLowerCase()}">
-				{ this.props.children }
-			</div>
-		)
+		if(controlled)
+			compBody = fs.readFileSync(__dirname+'../../../templates/js/component-controlled.js', "utf8");
+		else
+			compBody = fs.readFileSync(__dirname+'../../../templates/js/component.js', "utf8");
 	}
 }
 
-const mapStateToProps = state => {
-	//state.theReducer
-}
-
-export default connect(mapStateToProps)(${component});`
-	
-	}else{
-		reactImports = deps.React[1];
-		compBody =
-	`
-
-export default class ${component} extends Component {
-	render() {
-		return (
-			<div className="${component.toLowerCase()}">
-				{ this.props.children }
-			</div>
-		)
-	}
-}`;
-	}
-	
-}
-
+compBody = (compBody.replace(new RegExp('COMPONENT_NAME', 'g'), component).replace(new RegExp('component_name', 'g'), component.toLocaleLowerCase()));
 
 // Mounts component to the DOM
 if (isEntry) {
-	if (fn) {
-		reactImports +=
-		`
-		${deps.ReactDOM[1]}`
-	}
-	else {
-		reactImports +=
-		`
-		${deps.ReactDOM[0]}`
-	}
-	
-	compEnd +=
-	`
-	ReactDOM.render(<${component}/>, document.getElementById('app'));
-	`
+	console.error('Entry not available, under construction!');
+	process.exit();
 }
-// else {
-// 	if (fn) {
-// 		compEnd +=
-// 		`
-// 		module.exports = ${component};
-// 		`
-// 	}
-// }
 
-template = reactImports + compBody + compEnd;
-
+template = compBody + compEnd;
 
 
 // Export component
