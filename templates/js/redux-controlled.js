@@ -7,6 +7,7 @@ class COMPONENT_NAME extends Component {
 
 	static getDerivedStateFromProps(nextProps, prevState) {
 		//set and return controlled states
+		return null;
 	}
 
 	render() {
