@@ -1,33 +1,19 @@
 import fs from 'fs';
 import { exec } from 'child_process';
-import stylTmpl from '../templates/style';
 
-function createDirectory(component) {
-	exec('mkdir ' + component, (err, stdout) => {
-		if (err) { throw err };
-	});
+function createDirectory(directory) {
+	if(!fs.existsSync(directory)){
+		fs.mkdirSync(directory);
+	}
 }
 
-function createFiles(extensions, action, subDir, component, template, cb) {
+function createFiles(extensions, subDir, component, template, cb) {
 	extensions.forEach((ext) => {
-		exec(action + subDir + component + ext, (err, stdout) => {
-			if (err) { throw err };
-			if (ext === '.js' || ext === '.jsx') {
-				
-				// Writing up markup to component (.js or jsx) file
-				cb(subDir, component, ext, template);
-				return;
-			}
-			
-			let stylExt = ['.css','.styl','.scss', '.styl', '.css', '.styl', '.less'];
-			if(stylExt.indexOf(ext) !== -1) {
-				cb(subDir, component, ext, stylTmpl);  
-			}
-		})
+		cb(subDir, component, ext, template);
 	});
 }
 function writeToFile(subDir, component, ext, compTmpl) {
-	fs.writeFile(subDir + component + ext, compTmpl, (err) => {
+	fs.writeFile(subDir + component + ext, compTmpl, { flag: 'wx' }, (err) => {
 		if (err) { throw err };
 	})
 }

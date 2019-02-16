@@ -9,9 +9,10 @@ const
   controlled = (args.includes('--controlled')) || (args.includes('-c')),
   fn = (args.includes('--functional')) || (args.includes('-fn')),
   redux = args.includes('--redux'),
-  isEntry = args.includes('--entry');
 
-
+  stylClean = (args.includes('--scss')) || (args.includes('--styl')),
+  stylNormal = (args.includes('--css')) || (args.includes('--less'))
+;
 // Make variables accessible globally
 export {
   withFolder,
@@ -20,5 +21,6 @@ export {
   controlled,
   fn,
   redux,
-  isEntry
+  stylClean,
+  stylNormal
 }
