@@ -18,12 +18,12 @@ console.log("react-create"+ pjson.version);
 
 const helpMsg = [
 	'Usage: react-create component <filename> [options]',
-	'Usage: react-create redux <filename> [action] [options]',
+	'Usage: react-create redux <filename> <action> [options]',
 
 	'',
 	'actions:',
 	'  comp, component            Component creation', 
-	'  rdx,	redux                 Action and Reducer creation', 
+	'  rdx,	redux                 Action and Reducer creation',
 	'',
 	'options:',
 	'  -h, --help                 Prints out usage options',
@@ -46,15 +46,28 @@ if (help || args.length == 0) {
 switch(action){
 	case 'component':
 	case 'comp':
+		if (args.length < 2){
+			console.error('Invalid arguments')
+			console.log(helpMsg[0]);
+			process.exit();
+		}
+
 		require('./scripts/component');
 		break;
 	case 'rdx':
 	case 'redux':
+		if (args.length < 3){
+			console.error('Invalid arguments')
+			console.log(helpMsg[1]);
+			process.exit();
+		}
+
 		require('./scripts/redux')
 		break;
 	default:
 		console.error(`Action ${action} is not supported`);
 		console.log(helpMsg[0]);
+		console.log(helpMsg[1]);
 		process.exit();
 }
 

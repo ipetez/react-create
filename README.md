@@ -29,12 +29,12 @@ $ npm link
 ## Usage
 
     Usage: react-create component <filename> [options]',
-    Usage: react-create redux <filename> [action] [options]',
+    Usage: react-create redux <filename> <action> [options]',
 
     
     actions
       comp, component            Component creation
-      rdx,    redux                Action and Reducer creation
+      rdx,  redux                Action and Reducer creation
 
     options
       -h, --help                 Prints out usage option
