@@ -6,13 +6,7 @@ args = process.argv.slice(2),
 action = args[0],
 
 // options passed in as arguments
-version = (args.includes('-v')) || (args.includes('--version')),
 help = (args.includes('-h')) || (args.includes('--help'));
-
-// if (version) {
-	
-// 	process.exit();
-// }
 
 console.log("react-create"+ pjson.version);
 

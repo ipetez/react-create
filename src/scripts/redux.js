@@ -2,28 +2,22 @@ import path from 'path';
 import fs from 'fs';
 
 // Used for reading and writing files
-
 import { createDirectory, createFiles, writeToFile } from '../utils/file';
-import { withFolder } from '../constants/env_vars';
-
-
+// import { withFolder } from '../constants/env_vars';
 
 const currentDir = (process.cwd().split(path.sep)).slice(-1)[0];
 
 
-if(currentDir != 'src'){
-	console.log('/src');
+// if(currentDir != 'src'){
+// 	console.log('/src');
 	
-	if(fs.existsSync('src')){
-		process.chdir('src');
-	}else if(!withFolder){
-		console.error("Run this command from src/ or parent /src")
-		process.exit();
-	}
+// 	if(fs.existsSync('src')){
+// 		process.chdir('src');
+// 	}
 
-}else{
-	withFolder = false;
-}
+// }else{
+// 	withFolder = false;
+// }
 
 
 
@@ -41,15 +35,14 @@ let subDirs = {
 	reducers: './reducers/'
 }
 
-if (withFolder) {
-	createDirectory('src');
-	subDirs.actions = 'src/'+subDirs.actions;
-	subDirs.reducers = 'src/'+subDirs.reducers;
-}
+// if (withFolder) {
+// 	createDirectory('src');
+// 	subDirs.actions = 'src/'+subDirs.actions;
+// 	subDirs.reducers = 'src/'+subDirs.reducers;
+// }
 
-createDirectory(subDirs.actions);
-createDirectory(subDirs.reducers);
-
+if(!fs.existsSync(subDirs.actions)) createDirectory(subDirs.actions);
+if(!fs.existsSync(subDirs.reducers)) createDirectory(subDirs.reducers);
 
 const template = getTemplate();
 

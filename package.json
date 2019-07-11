@@ -5,8 +5,7 @@
   "scripts": {
     "lint": "eslint src",
     "clean": "rimraf lib",
-    "build": "npm run clean && babel src --out-dir lib",
-    "start": "node server.js"
+    "build": "npm run clean && babel src --out-dir lib"
   },
   "repository": {
     "type": "git",
@@ -24,16 +23,16 @@
     "react-create": "lib/index.js"
   },
   "devDependencies": {
-    "@babel/cli": "^7.0.0",
-    "@babel/core": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "babel-eslint": "^10.0.1",
+    "@babel/cli": "^7.5.0",
+    "@babel/core": "^7.5.4",
+    "@babel/preset-env": "^7.5.4",
+    "babel-eslint": "^10.0.2",
     "babel-plugin-array-includes": "^2.0.3",
-    "eslint": "^5.13.0",
-    "express": "^4.16.4",
+    "eslint": "^6.0.1",
+    "express": "^4.17.1",
     "rimraf": "^2.6.3"
   },
   "dependencies": {
-    "fs": "0.0.1-security"
+    "fs": "0.0.2"
   }
 }
