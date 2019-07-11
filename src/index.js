@@ -1,39 +1,68 @@
 #! /usr/bin/env node
-
 import pjson from '../package.json';
 
 const
-  args = process.argv.slice(2),
-  action = args[0],
+args = process.argv.slice(2),
+action = args[0],
 
-  // options passed in as arguments
-  version = (args.includes('-v')) || (args.includes('--version')),
-  help = (args.includes('-h')) || (args.includes('--help'));
+// options passed in as arguments
+help = (args.includes('-h')) || (args.includes('--help'));
 
-if (version) {
-  console.log(pjson.version);
-  process.exit();
+console.log("react-create"+ pjson.version);
+
+const helpMsg = [
+	'Usage: react-create component <filename> [options]',
+	'Usage: react-create redux <filename> <action> [options]',
+
+	'',
+	'actions:',
+	'  comp, component            Component creation', 
+	'  rdx,	redux                 Action and Reducer creation',
+	'',
+	'options:',
+	'  -h, --help                 Prints out usage options',
+	'  -d, --dir                  Creates a [componen name] directory with component file inside',
+	'',
+	'component options:',
+	'  -c, --controlled           Creates the component with controlled methods',
+	'  -fn, --functional          Creates the component with React\'s functional <unstate> syntax. ',
+	'  --jsx                      Creates the component with `.jsx` extenstion. (Default is `.js`)',
+	'',
+	'--css,--styl,--less,--scss   Create and choose your css preprocessor',
+
+];
+
+if (help || args.length == 0) {
+	console.log(helpMsg.join('\n'));
+	process.exit();
 }
 
-if (help) {
-  console.log([
-    'usage: react-create <action> <filename> [options]',
-    '',
-    'actions:',
-    '  comp, component          Passed in as first argument to signify component creation', 
-    '',
-    'options:',
-    '  -v, --version            Output\'s the version number (e.g react-create -v)',
-    '  -d, --dir                Creates a [componen name] directory with component file inside',
-    '  -p, --pkg                Includes a package.json file with component',
-    '  --es5                    Generates the compoenent with React\'s ES5 syntax. (Default is ES6)',
-    '  --jsx                    Creates the component with `.jsx` extenstion. (Default is `.js`)',
-    '  --entry                  Bootstraps the component with the \'ReactDOM.render\' function.',
-    '--css,--styl,--less, -scss Create and choose your css preprocessor to generate'
-  ].join('\n'));
-  process.exit();
+switch(action){
+	case 'component':
+	case 'comp':
+		if (args.length < 2){
+			console.error('Invalid arguments')
+			console.log(helpMsg[0]);
+			process.exit();
+		}
+
+		require('./scripts/component');
+		break;
+	case 'rdx':
+	case 'redux':
+		if (args.length < 3){
+			console.error('Invalid arguments')
+			console.log(helpMsg[1]);
+			process.exit();
+		}
+
+		require('./scripts/redux')
+		break;
+	default:
+		console.error(`Action ${action} is not supported`);
+		console.log(helpMsg[0]);
+		console.log(helpMsg[1]);
+		process.exit();
 }
 
-if (action === 'component' || action === 'comp') {
-  require('./scripts/component');
-}
+

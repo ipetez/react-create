@@ -1,12 +1,11 @@
 {
   "name": "react-create",
-  "version": "1.0.1",
+  "version": "2.0.1",
   "description": "Simple React CLI that aims to speed up development by generating desired React component markup based on your preferences via the command line.",
   "scripts": {
     "lint": "eslint src",
     "clean": "rimraf lib",
-    "build": "npm run clean && babel src --out-dir lib",
-    "start": "node server.js"
+    "build": "npm run clean && babel src --out-dir lib"
   },
   "repository": {
     "type": "git",
@@ -24,13 +23,16 @@
     "react-create": "lib/index.js"
   },
   "devDependencies": {
-    "babel-cli": "^6.6.5",
-    "babel-core": "^6.5.2",
-    "babel-eslint": "^5.0.0",
+    "@babel/cli": "^7.5.0",
+    "@babel/core": "^7.5.4",
+    "@babel/preset-env": "^7.5.4",
+    "babel-eslint": "^10.0.2",
     "babel-plugin-array-includes": "^2.0.3",
-    "babel-preset-es2015": "^6.5.0",
-    "eslint": "^1.10.3",
-    "express": "^4.13.4",
-    "rimraf": "^2.5.2"
+    "eslint": "^6.0.1",
+    "express": "^4.17.1",
+    "rimraf": "^2.6.3"
+  },
+  "dependencies": {
+    "fs": "0.0.2"
   }
 }
